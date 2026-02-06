@@ -1,0 +1,78 @@
+import math
+def read_float(text):
+    value = input(text)
+    return float(value)
+
+def calculate_Dreieck():
+    print("Sie haben ein Dreieck gewählt")
+    a = read_float("Seite a: ")
+    b = read_float("Seite b: ")
+    c = read_float("Seite c: ")
+    wahl = input("1 - Umfang, 2 - Fläche: ")
+
+    if wahl == "1":
+        P = a + b + c
+        print(f"Umfang des Dreiecks: {P}")
+    elif wahl == "2":
+        s = (a + b + c) / 2
+        A = math.sqrt(s * (s - a) * (s - b) * (s - c))
+        print(f"Fläche des Dreiecks: {A}")
+
+def calculate_Quadrat():
+    print("Sie haben ein Quadrat gewählt")
+    a = read_float("Seite a: ")
+    wahl = input("1 - Umfang, 2 - Fläche: ")
+
+    if wahl == "1":
+        P = a * 4
+        print(f"Umfang des Quadrats: {P}")
+    elif wahl == "2":
+        A = a * a
+        print(f"Fläche des Quadrats: {A}")
+
+def calculate_Rechteck():
+    print("Sie haben ein Rechteck gewählt")
+    a = read_float("Seite a: ")
+    b = read_float("Seite b: ")
+    wahl = input("1 - Umfang, 2 - Fläche: ")
+
+    if wahl == "1":
+        P = 2 * (a + b)
+        print(f"Umfang des Rechtecks: {P}")
+    elif wahl == "2":
+        A = a * b
+        print(f"Fläche des Rechtecks: {A}")
+
+def calculate_Kreis():
+    print("Sie haben einen Kreis gewählt")
+    r = read_float("Radius: ")
+    wahl = input("1 - Umfang, 2 - Fläche: ")
+
+    if wahl == "1":
+        U = 2 * math.pi * r
+        print(f"Umfang des Kreises: {U}")
+    elif wahl == "2":
+        A = math.pi * r ** 2
+        print(f"Fläche des Kreises: {A}")
+
+def dreisatz():
+    print("=== Geometrie Rechner ===")
+    print("1 - Dreieck")
+    print("2 - Quadrat")
+    print("3 - Rechteck")
+    print("4 - Kreis")
+
+    first_choice = input("Wählen Sie eine geometrische Form: ")
+
+    if first_choice == "1":
+        calculate_Dreieck()
+    elif first_choice == "2":
+        calculate_Quadrat()
+    elif first_choice == "3":
+        calculate_Rechteck()
+    elif first_choice == "4":
+        calculate_Kreis()
+    else:
+        print("Ungültige Auswahl")
+
+dreisatz()
